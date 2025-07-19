@@ -2,6 +2,7 @@
 
 
 #include "Player/AuraPlayerController.h"
+#include "EnhancedInputSubsystems.h"
 
 AAuraPlayerController::AAuraPlayerController()
 {
@@ -19,7 +20,7 @@ void AAuraPlayerController::BeginPlay()
 	Subsystem->AddMappingContext(AuraContext, 0);
 
 	bShowMouseCursor = true;
-	DefualtMouseCursor = EMouseCursor::Default;
+	DefaultMouseCursor = EMouseCursor::Default;
 
 	FInputModeGameAndUI InputModeData;
 	InputModeData.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
