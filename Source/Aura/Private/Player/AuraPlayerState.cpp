@@ -9,6 +9,7 @@ AAuraPlayerState::AAuraPlayerState()
 {
 	AbilitySysteamComponent = CreateDefaultSubobject<UAauraAbilitySystemComponent>("AbilitySystemComponent");
 	AbilitySysteamComponent->SetIsReplicated(true);
+	AbilitySysteamComponent->SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
 
 	AttributeSet = CreateDefaultSubobject<UAuraAttributeSet>("ttributeSet");
 
