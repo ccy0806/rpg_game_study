@@ -6,6 +6,7 @@
 #include <AbilitySystem/AauraAbilitySystemComponent.h>
 #include <AbilitySystem/AuraAttributeSet.h>
 
+
 AAuraCharacterEnemy::AAuraCharacterEnemy()
 {
 	GetMesh()->SetCollisionResponseToChannel(ECC_Visibility, ECR_Block);
@@ -35,6 +36,12 @@ void AAuraCharacterEnemy::UnhighlightActor()
 void AAuraCharacterEnemy::BeginPlay()
 {
 	Super::BeginPlay();
+	InitAbilityActorInfo();
+	
+}
 
+void AAuraCharacterEnemy::InitAbilityActorInfo()
+{
 	AbilitySysteamComponent->InitAbilityActorInfo(this, this);
+	Cast<UAauraAbilitySystemComponent>(AbilitySysteamComponent)->AbilityActorInfoSet();
 }
